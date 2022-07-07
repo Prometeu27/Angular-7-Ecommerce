@@ -1,0 +1,48 @@
+<div class="nav-wrapper">
+    <h3>Navighează către:</h3>
+    <div class="">
+        <button class="button1 active">Comenzi active</button> <button class="button1" [routerLink]="'/products'">Setări produse</button>
+    </div>
+</div>
+<div class="main-wrapper"><b *ngIf="numberOfOrders === 0">Nu există nicio comandă momentan!</b>
+    <div class="card">
+        <div class="table-responsive">
+            <ng-container *ngFor="let orders of ordersArray; let i = index">
+                <table class="table table-borderless table-shopping-cart">
+                    <ng-container *ngFor="let x of orders; let ind = index">
+                        <ng-container *ngIf="ind === 0">
+                            <b>Informații despre client:</b><br>
+                            <b>Username:</b> {{ x.customerUsername }} | <b>Email:</b> {{ x.customerEmail }}<br>
+                            <b>Date personale client:</b><br>
+                            <b>Nume:</b> {{ x.customerName }} | <b>telefon:</b> {{ x.customerPhone }} | <b>adresă:</b> {{ x.customerAddress }}, <b>oraș:</b> {{ x.customerCity }}, <b>județ:</b> {{ x.customerCounty }}<br>
+                            <br>
+                            <b>Acțiuni:</b>
+                            <button (click)="deleteOrder(x.orderID, i)">Șterge comanda</button>
+                            <tr class="small text-uppercase text-muted">
+
+                                <th scope="col">Nume produs</th>
+                                <th scope="col" width="220">Cantitate</th>
+                                <th scope="col" width="220">Preț unitar</th>
+                                <th scope="col" width="220">Preț total</th>
+                            </tr>
+                        </ng-container>
+                    </ng-container>
+
+                    <tr *ngFor="let x of orders; let ind = index">
+                        <td>
+                            <figure class="itemside align-items-center">
+                                <figcaption class="info">
+                                    <a href="#" class="title text-dark" data-abc="true">{{ x.name }}</a>
+                                </figcaption>
+                            </figure>
+                        </td>
+                        <td scope="col" width="220">{{ x.quantity }}</td>
+                        <td scope="col" width="220">{{ x.price }}</td>
+                        <td scope="col" width="220">{{ x.quantity * x.price }}</td>
+                    </tr>
+                </table>
+            </ng-container>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,53 @@
+.input-container {
+    padding: 5px 5% 10px 5%;
+    width: 100%;
+}
+
+.input-container button {
+    height: 50px;
+    margin: 20px 0;
+    padding: 0 8% 0px 8%;
+}
+
+.form-input {
+    font-size: 1.3rem;
+    display: inline-block;
+    margin-bottom: 6px;
+    width: 100%;
+    padding: 12px 12px;
+}
+
+.wrapper {
+    display: block;
+    border: 1px solid #ccc;
+    width: 600px;
+    margin: 3% auto;
+}
+
+.double {
+    width: 100%
+}
+
+.half {
+    width: 50%;
+    display: flex;
+}
+
+h3 {
+    padding: 00px 0 0 5%
+}
+
+form {
+    padding: 20px 0 20px 0;
+}
+
+.submit {
+    display: block;
+    width: 90%;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    background-color: #0171bb;
+    color: white;
+    margin: 0 auto;
+    padding: 10px 0 10px;
+}

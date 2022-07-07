@@ -1,0 +1,22 @@
+<div class="login-card">
+    <div class="title">Intră în cont</div>
+
+    <form #loginForm="ngForm">
+        <div class="input-container">
+            <label for="email" class="form-label">Email:</label>
+            <input class="form-input" type="email" name="email" id="email" placeholder="Enter your email" #email required/>
+        </div>
+        <div class="input-container">
+            <label for="password" class="form-label">Parola:</label>
+            <input class="form-input" type="password" name="password" id="password" placeholder="Enter a password" #password required/>
+        </div>
+
+        <div style="padding: 0 8% 0 8%; "><input type="button" value="Intră în cont" class="btn" (click)="onSubmit(email.value, password.value)">
+        </div>
+
+    </form>
+    <div style="padding: 0 8% 10px 8%;"> <button class="btn-google" (click)="login()">Întră în cont prin Google</button>
+
+    </div>
+    <div style="padding: 0 8% 0px 8%;"><a routerLink="/register">Ești nou? Înregistrează-te!</a></div>
+</div>

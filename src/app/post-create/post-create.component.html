@@ -1,0 +1,26 @@
+<form class="form-card">
+    <div class="form-wrapper">
+        <div class="input-container">
+            <label for="name" class="form-label">Name:</label>
+            <input class="form-input" type="text" name="name" placeholder="Product name" />
+        </div>
+        <div class="input-container">
+            <label for="price" class="form-label">Price:</label>
+            <input class="form-input" type="number" name="name" placeholder="Product price" />
+        </div>
+        <div class="input-container">
+            <label for="category" class="form-label">Name:</label>
+            <select id="category" class="form-control">
+            <option *ngFor="let categg of categs | async" value="categg.$key">{{ categg.name }}</option>
+            
+        </select>
+        </div>
+        <div class="input-container">
+            <label for="imageUrl" class="form-label">Price:</label>
+            <input class="form-input" type="text" name="imageUrl" placeholder="Product image url" />
+        </div>
+
+        <div style="padding: 0 8% 10px 8%;"> <button mat-raised-button style="display: block; width:100%;box-shadow: none;border: 1px solid #ccc" >Add product</button>
+        </div>
+    </div>
+</form>

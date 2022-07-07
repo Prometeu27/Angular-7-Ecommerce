@@ -1,0 +1,48 @@
+<div class="header-section ">
+    <div class="left">
+        <button mat-icon-button (click)="toggleSideBar()"><fa-icon [icon]="faNavicon" class="navIcon"></fa-icon></button>
+    </div>
+    <div class="center header-title">
+        <h3>Moșia <img src="https://firebasestorage.googleapis.com/v0/b/ecom-a1.appspot.com/o/favicon.png?alt=media&token=cb4d9019-f498-4327-8dcd-d295255a44c3" class="header-image"> Olteanului</h3>
+    </div>
+    <div class="right">
+        <ng-container>
+            <div class="cart-counter" *ngIf="cartSize > 0">{{ cartSize }}</div>
+            <button mat-mini-fab mat-button routerLink="/cart" class="cartButton"><fa-icon [icon]="faShoppingCart" class="navIcon"></fa-icon>
+            </button>
+        </ng-container>
+    </div>
+
+</div>
+<mat-drawer-container [hasBackdrop]="true">
+    <mat-sidenav #sidenav class="side-nav-left" position="start" role="directory" [opened]="opened">
+        <div class="backdrop" (click)="opened = false"></div>
+        <div class="side-nav-content">
+            <div style="width:100%">
+                <a routerLink="/" (click)="opened = false"><img src="https://firebasestorage.googleapis.com/v0/b/ecom-a1.appspot.com/o/logo-mare.png?alt=media&token=181e8f2a-235a-45f3-9d28-b5803609d66f" width="100%" height="100%"></a>
+            </div>
+            <div class="nav-button-container ">
+                <div>
+                    <button routerLink="/" (click)="opened = false">Acasă</button>
+                    <button routerLink="/cart" (click)="opened = false">Coșul tău</button>
+                </div>
+                <hr width="80%">
+                <div *ngIf="!(auth.user$ | async)">
+                    <h4 style="align-self: center; margin: 5% 0 0 0;">Bine ai venit!</h4>
+                    <button routerLink="/login" (click)="opened = false">Intră în cont</button>
+                    <button routerLink="/register" (click)="opened = false">Înregistrare</button>
+                </div>
+                <div *ngIf="auth.user$ | async as user">
+                    <h5 style="text-align: center;">Ești logat ca</h5>
+                    <h5 style="text-align: center;">{{ user.email }}</h5>
+
+                    <button routerLink="/" (click)="logout(); opened = false">Delogare</button>
+                    <div *ngIf="isAdmin[0] === true">
+                        <button routerLink="/" [routerLink]="'/orders/'" (click)="opened = false">Admin Panel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </mat-sidenav>
+</mat-drawer-container>

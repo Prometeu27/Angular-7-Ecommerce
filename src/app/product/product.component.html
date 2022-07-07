@@ -1,0 +1,19 @@
+<div class="product-container" *ngFor="let x of prodData">
+    <div class="w50 c1">
+        <img [src]="x.imageUrl" width="350em">
+        <div class="button-container">
+            <button mat-raised-button class="add-button" (click)="addTC(prodData[0], productID)">Adaugă în coș</button>
+            <button mat-raised-button class="add-button" routerLink="/">Continuă cumpărăturile</button>
+        </div>
+    </div>
+    <div class="w50 c2">
+        <span class="product-title">{{ x.name }}</span>
+        <hr width="80%" color="gray" align="left">
+        <span class="text-header">Specificații produs:</span>
+        <span class="text-details">Preț: {{ x.price }} lei</span>
+        <span class="text-details">Cantitate: {{ x.amount }}</span>
+        <span class="text-details">Categorie: {{ x.category }}</span>
+        <span class="text-details">{{ x.det1 }}</span>
+
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="nav-wrapper">
+    <h3>Navighează către:</h3>
+    <div>
+        <button class="button1" [routerLink]="'/orders'">Comenzi active</button> <button class="active button1">Setări produse</button>
+    </div>
+</div>
+<div class="main-wrapper ">
+    <div class="wrapper ">
+        <form #newProduct="ngForm" (ngSubmit)="onSubmit(newProduct.value) ">
+            <h3>Adaugă un produs nou</h3>
+
+            <div class="input-container ">
+                <label for="name " class="form-label ">Nume produs</label><br>
+                <input class="form-input " type="text " name="name" placeholder="Introdu numele produsului" ngModel/>
+            </div>
+            <div class="input-container ">
+                <label for="price " class="form-label ">Preț produs</label><br>
+                <input class="form-input " type="number " name="price" placeholder="Introdu prețul produsului" ngModel/>
+            </div>
+            <div class="input-container ">
+                <label for="category " class="form-label ">Categorie produs</label><br>
+                <input class="form-input" type="text " name="category" placeholder="Introdu categoria produsului" ngModel/>
+            </div>
+            <div class="input-container ">
+                <label for="image " class="form-label ">Imagine produs (link direct)</label><br>
+                <input class="form-input" type="text " name="image" placeholder="Introdu imaginea produsului" ngModel/>
+            </div>
+            <div class="input-container ">
+                <label for="amount" class="form-label ">Cantitate per 1 produs</label><br>
+                <input class="form-input" type="text" name="amount" placeholder="Introdu cantitatea și unitatea de măsură" ngModel/>
+            </div>
+            <div class="input-container ">
+                <label for="details" class="form-label ">Detalii</label><br>
+                <input class="form-input" type="text" name="details" placeholder="Introdu detalii despre produs" ngModel/>
+            </div>
+
+            <input type="submit" value="Adaugă produs" class="submit ">
+
+        </form>
+    </div>
+
+    <hr>
+
+    <h3 class="title-h3 ">Produse existente</h3>
+
+    <b *ngIf="numberOfProducts===0 ">Nu există niciun produs la momentul actual!</b>
+    <div class="card ">
+        <div class="table-responsive ">
+            <table class="table table-borderless table-shopping-cart ">
+                <tr class="small text-uppercase text-muted ">
+                    <th scope="col ">Nume produs</th>
+                    <th scope="col " width="220 ">Preț</th>
+                    <th scope="col " width="220 ">Categorie</th>
+                    <th scope="col " width="220 ">Imagine</th>
+                    <th scope="col " witdh="100 ">Șterge</th>
+                </tr>
+                <tr *ngFor="let x of products | async ">
+                    <td>
+                        <figure class="itemside align-items-center ">
+                            <figcaption class="info ">
+                                <a href="# " class="title text-dark " data-abc="true ">{{ x.name }}</a>
+                            </figcaption>
+                        </figure>
+                    </td>
+                    <td scope="col " width="220 ">{{ x.price }}</td>
+                    <td scope="col " width="220 ">{{ x.category }}</td>
+                    <td scope="col " width="220 "><img [src]="x.imgUrl " width="70px "></td>
+                    <td scope="col " width="100 "><button class="btn btn-danger " data-abc="true " (click)="deleteProduct(x.productId) ">X</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

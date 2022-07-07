@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="row">
+        <aside class="col-lg-9">
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table table-borderless table-shopping-cart">
+                        <thead class="text-muted">
+                            <tr class="small text-uppercase">
+                                <th scope="col">Produs</th>
+                                <th scope="col" width="10%">Cantitate</th>
+                                <th scope="col" width="15%">Preț</th>
+                                <th scope="col" width="35%" class="text-right">Șterge </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <span style="padding: 20px 0 20px 10px;" *ngIf="cartSize == 0">Cartul tău este gol!</span>
+                            <tr *ngFor="let product of prods | async">
+                                <td scope="col">
+                                    <figure class="itemside align-items-center">
+                                        <div class="aside"><img [src]="product.product.imgUrl" class="img-sm"></div>
+                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">{{ product.product.name }}</a>
+                                        </figcaption>
+                                    </figure>
+                                </td>
+                                <td scope="col" width="10%">
+                                    <input class="form-control" type="number" [ngModel]="product.quantity" (ngModelChange)="inputChange($event, product.prodId)">
+                                    <td scope="col" width="15%">
+                                        <div class="price-wrap "> <var class="price ">{{ product.product.price }} lei</var> <small class="text-muted ">{{ product.quantity * product.product.price }} lei total</small> </div>
+                                    </td>
+                                    <td scope="col" width="35%" class="text-right">
+                                        <button href=" " class="btn btn-light " data-abc="true " (click)="deleteProduct(product.prodId) ">X</button>
+                                    </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </aside>
+
+        <aside class="col-lg-3 ">
+            <div class="card ">
+                <div class="card-body ">
+                    <dl class="dlist-align ">
+                        <dt>Preț total:</dt>
+                        <dd class="text-right ml-3 ">{{ totalPrice }} lei</dd>
+                    </dl>
+                    <dl class="dlist-align ">
+                        <dt>Preț livrare:</dt>
+                        <dd class="text-right ml-3 ">{{ transportPrice }} lei</dd>
+                    </dl>
+                    <dl class="dlist-align ">
+                        <dt>Total:</dt>
+                        <dd class="text-right text-dark b ml-3 "><strong>{{ totalPrice + transportPrice }} lei</strong></dd>
+                    </dl>
+                    <hr>
+                    <button mat-raised-button class="btn-order" [routerLink]="['/check-out/']">Continuă comanda</button>
+                    <button mat-raised-button class="btn-order" [routerLink]="['/']">Continuă cumpărăturile</button>
+                    <button mat-raised-button class="btn-order" (click)="deleteCart() ">Resetează coșul</button>
+
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>

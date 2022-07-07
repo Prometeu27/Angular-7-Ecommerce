@@ -1,0 +1,43 @@
+.form-card {
+    display: block;
+    border: 1px solid #ccc;
+    width: 600px;
+    margin: 3% auto;
+}
+
+.form-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    padding: 5% 0;
+}
+
+.input-container {
+    padding: 0 8% 30px 8%;
+}
+
+.input-container button {
+    height: 50px;
+    margin: 20px 0;
+    padding: 0 8% 0px 8%;
+}
+
+.form-text {
+    font-size: 0.875rem;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.form-input {
+    font-size: 0.875rem;
+    display: inline-block;
+    margin-bottom: 6px;
+    width: 100%;
+    padding: 12px 12px;
+}

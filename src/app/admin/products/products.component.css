@@ -1,0 +1,112 @@
+.main-wrapper {
+    margin: 2% 2% 2% 2%;
+}
+
+.wrapper {
+    width: 40%;
+    margin: 2%;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 0px
+}
+
+.itemside .info {
+    padding-left: 15px;
+    padding-right: 7px
+}
+
+.table-shopping-cart .price-wrap {
+    line-height: 1.2
+}
+
+.table-shopping-cart .price {
+    font-weight: bold;
+    margin-right: 5px;
+    display: block
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.input-container {
+    padding: 5px 5% 10px 5%;
+    width: 100%;
+}
+
+.input-container button {
+    height: 50px;
+    margin: 20px 0;
+    padding: 0 8% 0px 8%;
+}
+
+.form-input {
+    font-size: 1.3rem;
+    display: inline-block;
+    margin-bottom: 6px;
+    width: 100%;
+    padding: 12px 12px;
+}
+
+.submit {
+    display: block;
+    width: 90%;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    background-color: #0171bb;
+    color: white;
+    margin: 0 auto;
+    padding: 10px 0 10px;
+    text-align: center;
+}
+
+.title-h3 {
+    margin: 2%;
+}
+
+.nav-wrapper {
+    width: 40%;
+}
+
+.button1 {
+    margin-bottom: 20px;
+    margin-left: 5%;
+    height: 45px;
+    width: 40%;
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    background: transparent;
+    display: inline-block;
+}
+
+.active {
+    background-color: #0171bb;
+    color: #fff
+}
+
+.active:hover {
+    pointer-events: none;
+    border: none;
+}
+
+.active:active {
+    pointer-events: none;
+    border: none;
+}
+
+.nav-wrapper h3 {
+    margin-left: 6%;
+}

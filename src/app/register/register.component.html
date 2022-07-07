@@ -1,0 +1,23 @@
+<div class="register-card">
+    <div class="title">Înregistrare</div>
+
+    <form #register="ngForm">
+        <div class="input-container">
+            <label for="email" class="form-label">Email:</label>
+            <input class="form-input" type="email" name="email" id="email" placeholder="Enter your email" #email required/>
+        </div>
+        <div class="input-container">
+            <label for="password" class="form-label">Parola:</label>
+            <input class="form-input" type="password" name="password" id="password" placeholder="Enter a password" #password required/>
+        </div>
+        <div class="input-container ">
+            <input type="checkbox" id="checkbox " value="value-2 " name="check" required/> Sunt de acord cu Termenii și Condițiile & Politica de Confidențialitate
+        </div>
+
+        <div style="padding: 0 8% 0 8%; "><input type="button" value="Înregistrare" class="btn" (click)="onSubmit(email.value, password.value)">
+        </div>
+    </form>
+    <div style="padding: 0 8% 0 8%;"> <button class="btn-google" (click)="login()">Înregistrare cu Google</button>
+
+        <div style="padding: 0 8% 0px 0%; "><a routerLink="/login">Ești deja înregistrat? Intră în cont!</a></div>
+    </div>

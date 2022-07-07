@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card-columns">
+        <div class="card" *ngFor="let product of prods | async">
+            <a [routerLink]="['product/', product.prodId]">
+                <img class="card-img-top" [src]="product.imgUrl" alt="Card image cap">
+            </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <div class="card-text">
+                        <p class="product-price">{{ product.price }} lei</p>
+                        <p class="product-category">{{ product.category }} </p>
+                    </div>
+                    <div class="btnset">
+                        <a class="btn btn1" [routerLink]="['product/', product.prodId]">Detalii</a>
+                        <a class="btn btn2" (click)="addTC(product, product.prodId)" style="color:#fff">Adaugă în coș</a>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</div>

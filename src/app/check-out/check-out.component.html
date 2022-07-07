@@ -1,0 +1,38 @@
+<div class="wrapper">
+    <form #order="ngForm" (ngSubmit)="onSubmit(order.value)">
+        <h3>Persoană de contact</h3>
+
+        <hr width="90%" align="center">
+
+        <div style="display: flex;">
+            <div class="input-container ">
+                <label for="name" class="form-label">Nume</label><br>
+                <input class="form-input" type="text" name="name" placeholder="Numele tău" ngModel/>
+            </div>
+            <div class="input-container ">
+                <label for="name" class="form-label">Număr de telefon</label><br>
+                <input class="form-input" type="text" name="phone" placeholder="Numărul tău de telefon" ngModel/>
+            </div>
+        </div>
+
+        <h3>Date de livrare</h3>
+        <hr width="90%" align="center">
+
+        <div style="display: flex;">
+            <div class="input-container ">
+                <label for="county" class="form-label">Județ</label><br>
+                <input class="form-input" type="text" name="county" placeholder="Județ" ngModel/>
+            </div>
+            <div class="input-container ">
+                <label for="city" class="form-label">Oraș</label><br>
+                <input class="form-input" type="text" name="city" placeholder="Oraș" ngModel/>
+            </div>
+        </div>
+        <div class="input-container ">
+            <label for="address" class="form-label">Adresă</label><br>
+            <input class="form-input" type="text" name="address" placeholder="Adresa de livrare" ngModel/>
+        </div>
+        <input type="submit" value="Plasează comanda" class="submit" [routerLink]="'/order-placed/'">
+
+    </form>
+</div>
